@@ -20,10 +20,15 @@ class Result {
      */
 
     public static String timeConversion(String s) {
+        int hourValue = 0;
         if(s.contains("PM")){
-            
+            hourValue = (Integer.valueOf(s.substring(0, 2)) + 12)%24;
+            s = String.valueOf(hourValue) + s.substring(2, s.length());
         }
-
+        s = s.substring(0, s.length()-2);
+        System.out.println(s);
+        return s;
+        
     }
 
 }
